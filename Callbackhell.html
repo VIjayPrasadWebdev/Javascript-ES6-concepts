@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback hell in javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        section
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        .btn
+        {
+            margin-top: 4rem;
+            outline: none;
+            border: none;
+            background-color: brown;
+            color: #fff;
+            border-radius: 2px;
+            padding: .5rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        p
+        {
+            margin-top: 3rem;
+            font-size: 4rem;
+        }
+        </style>
+</head>
+<body>
+    
+    <h1>Callback hell in Javascript</h1>
+
+
+    <p class="first">Hello World</p>
+    <p class="second">Hello People</p>
+    <p class="third">Hello Javascript</p>
+    <button class="btn">Click</button>
+    <script>
+
+ // Callback Hell
+// after 1s first red;
+// after 3s second blue; 4s
+// after 2s third green; 6s
+// IN SEQUENCE !!!!
+       
+        let btn=document.querySelector('button')
+        let first=document.querySelector(".first")
+        let second=document.querySelector(".second")
+        let third=document.querySelector(".third")
+        btn.addEventListener('click',()=>
+        {
+            setTimeout(() => {
+                first.style.color="red"
+                setTimeout(() => {
+                second.style.color="blue"
+                setTimeout(() => {
+                third.style.color="green"
+            }, 2000);
+            }, 3000);
+            }, 1000);
+           })
+       
+        </script>
+        </body>
+</html>

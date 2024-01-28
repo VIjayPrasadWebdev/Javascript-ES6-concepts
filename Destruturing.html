@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring in Javascript</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        section
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        </style>
+</head>
+<body>
+    <h1>Destructuring in Javascript</h1>
+
+
+    <script>
+        // faster/easier way to access/unpack variables from arrays
+
+        // Order is important
+
+
+
+const fruits = ['orange', 'banana', 'lemon'];
+const friends = ['john', 'peter', 'bob', 'anna', 'kelly'];
+
+const fruit1 = fruits[0];
+const fruit2 = fruits[1];
+const fruit3 = fruits[2];
+
+console.log(fruit1,fruit2,fruit3);
+
+let [f1,f2,f3]=fruits
+console.log(f1,f3);
+
+
+let [friend,friend2,enemy,bestie,crush]=friends
+console.log(friend,friend2,enemy,bestie,crush);
+
+// swap 
+
+let baskeballplayer=["Michael","Jordan"]
+
+let [firstname,lastname]=baskeballplayer
+
+
+
+let temp=lastname
+
+lastname=firstname
+
+firstname=temp
+
+let[last1,first1]=[firstname,lastname]
+
+console.log("TEMP :",firstname,lastname);
+
+console.log("ES6 :",last1,first1);
+
+
+
+// faster/easier way to access/unpack values from objects
+// Order is not neccessary
+
+const bob = {
+  first: 'bob',
+  last: 'sanders',
+  city: 'chicago',
+  siblings: {
+    sister: 'jane',
+  },
+};
+
+
+let{first,last,city,siblings:{sister}}=bob
+console.log(first,last,city,sister);
+
+// variable name change :
+let{first:myname}=bob
+console.log(myname);
+
+// object destructuring in functions 
+
+
+function Person ({first,last,city,siblings:{sister}})
+{
+   // return {first,last,city,siblings:{sister}}=person
+  // let {first,last,city,siblings:{sister}}=person
+
+   console.log(first,last,city,sister);
+}
+//console.log(Person(bob));
+
+Person(bob)
+    </script>
+</body>
+</html>

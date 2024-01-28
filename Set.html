@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set method in Javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        section
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        </style>
+</head>
+<body>
+    <h1>Set method in Javascript</h1>
+
+    <section>
+
+    </section>
+
+    <script>
+        // Unique Values
+const menu = [
+  {
+    name: 'pancakes',
+    category: 'breakfast',
+  },
+  {
+    name: 'burger',
+    category: 'lunch',
+  },
+  {
+    name: 'steak',
+    category: 'dinner',
+  },
+  {
+    name: 'bacon',
+    category: 'breakfast',
+  },
+  {
+    name: 'eggs',
+    category: 'breakfast',
+  },
+  {
+    name: 'pasta',
+    category: 'dinner',
+  },
+];
+// const categories = ['all', ...new Set(menu.map((item) => item.category))];
+// map - get all instances
+// new Set - narrow down
+// ['all',...] - turn it back to array
+
+
+let numbers=[1,2,3,4,5,2,32,4,5,6,7,3,4,5,6,1,2,3,4,5,6,7,8,9,234,5,46,23,23,5,3,12,35,5,6,2435]
+
+let uniquenumbers=[...new Set(numbers)]
+console.log(uniquenumbers);
+
+let sorteduniquenumbers=uniquenumbers.sort((a,b)=>a-b)
+console.log(sorteduniquenumbers);
+
+
+
+
+
+let uniquevalues =["Brunch",...new Set(menu.map((item)=>
+{
+    return item.category
+}))]
+
+console.log(uniquevalues);
+
+let dynamicbuttons=uniquevalues.map((button)=>
+{
+    return `<button class=${button} data-id=${button}>${button.toUpperCase()}</button>`
+})
+
+console.log(dynamicbuttons);
+
+let section=document.querySelector("section")
+section.innerHTML=dynamicbuttons.join(" ")
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce method in Javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        section
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        </style>
+</head>
+<body>
+    <h1>Reduce method in Javascript</h1>
+
+    <script>
+        // Reduce
+// iterates, callback function
+// reduces to a single value - number, array, object
+// 1st parameter ('acc') - total of all calculations
+// 2nd parameter ('curr') - current iteration/value
+
+const staff = [
+  { name: 'bob', age: 20, position: 'developer', salary: 100 },
+  { name: 'peter', age: 25, position: 'designer', salary: 300 },
+  { name: 'susy', age: 30, position: 'the boss', salary: 400 },
+  { name: 'anna', age: 35, position: 'intern', salary: 10 },
+];
+
+let reduce=staff.reduce((acc,total)=>{
+    console.log(total.salary);
+    return acc
+},0)
+console.log(reduce);
+
+
+
+
+// Reduce - Objects
+// cart example
+const cart = [
+  {
+    title: 'Samsung Galaxy S7',
+    price: 599.99,
+    amount: 1,
+  },
+  {
+    title: 'google pixel ',
+    price: 499.99,
+    amount: 2,
+  },
+  {
+    title: 'Xiaomi Redmi Note 2',
+    price: 699.99,
+    amount: 4,
+  },
+  {
+    title: 'Xiaomi Redmi Note 5',
+    price: 399.99,
+    amount: 3,
+  },
+]
+ /** let totalamount=cart.reduce((total,item)=>{
+
+   let {amount,price}=item
+      total.totalamount+=amount
+      total.totalprice+=amount*price
+
+    return total
+
+},{totalamount:0,totalprice:0})  
+
+console.log("Total amount :",totalamount);
+**/
+
+
+let {totalamount,totalprice}=cart.reduce((total,item)=>{
+
+let {amount,price}=item
+   total.totalamount+=amount
+   total.totalprice+=amount*price
+
+ return total
+
+},{totalamount:0,totalprice:0})
+
+totalprice=parseFloat(totalprice.toFixed(2))
+console.log(totalamount, totalprice);
+    </script>
+</body>
+</html>

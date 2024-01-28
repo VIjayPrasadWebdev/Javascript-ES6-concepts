@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set method in Javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        section
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        </style>
+</head>
+<body>
+    <h1>Filter and Find method in javascript</h1>
+
+
+    <script>
+        // Filter - returns a new array, can manipulate the size of new array (unlike map), returns based on condition
+// Find - returns single instance (object), returns first match, if no match - undefined
+
+const people = [
+  { name: 'bob', age: 20, position: 'developer' },
+  { name: 'vijay', age: 24, position: 'developer' },
+  { name: 'appu', age: 20, position: 'Mechanic' },
+  { name: 'peter', age: 25, position: 'designer' },
+  { name: 'susy', age: 30, position: 'the boss' },
+  { name: 'anna', age: 35, position: 'intern' },
+];
+
+
+
+
+
+// Filter method ...
+
+let youngpeople=people.filter((people)=>
+{
+    if(people.age<=25)
+    {
+        return people
+    }
+})
+console.log(youngpeople);
+
+let oldest=people.filter((people)=>
+{
+    return people.age>30
+})
+console.log(oldest);
+
+let developer=people.filter((people)=>people.position==="developer")
+console.log(developer);
+
+
+// No match :
+
+let child=people.filter((people)=>
+{
+    return people.age<18
+})
+console.log(child);
+
+
+
+// Find Method :
+
+let finddeveloper=people.find((people)=>(people.position==="developer"))
+console.log(finddeveloper);
+
+    </script>
+</body>
+</html>

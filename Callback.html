@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback functions in Javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        section
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        .btn
+        {
+            margin-top: 4rem;
+            outline: none;
+            border: none;
+            background-color: brown;
+            color: #fff;
+            border-radius: 2px;
+            padding: .5rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        </style>
+</head>
+<body>
+    
+    <h1>Callback functions in Javascript</h1>
+
+    <button class="btn">Click</button>
+    <script>
+        // array methods, setTimeout etc :
+
+
+        function Makeuppercase (name)
+        {
+            console.log(name.toUpperCase());
+        }
+       // Makeuppercase("victor")
+
+
+      
+
+        function handleName(name,callback)
+        {
+            let fullname=`${name} prasad`
+          //  console.log(fullname);
+          callback(fullname)
+        }
+        handleName("vijay",Makeuppercase)
+        handleName("alex",function ReverseString(name)
+        {
+            let reversename=name.split(" ").reverse().join(" ")
+            console.log(reversename);
+        })
+
+
+        document.querySelector("button").addEventListener('click',(e)=>console.log(e.currentTarget))
+    </script>
+</body>
+</html>
